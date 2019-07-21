@@ -1,10 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default function BlogPost({data}) {
+const BlogPost = ({data}) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
@@ -21,6 +21,7 @@ export default function BlogPost({data}) {
           />
         </div>
       </div>
+      <Link to='/blog'>Back to blog index</Link>
     </Layout>
   )
 }
@@ -37,3 +38,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogPost

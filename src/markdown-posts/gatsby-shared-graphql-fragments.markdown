@@ -1,7 +1,7 @@
 ---
 path: "/blog/gatsby-shared-graphql-fragments"
 date: "2019-07-21"
-title: "How to export GraphQL fragments for reuse across templates in GatsbyJS"
+title: "How to export GraphQL fragments in GatsbyJS"
 ---
 
 GraphQL fragments can help organize and encourage reuse within our GatsbyJS page queries. However, how do you share fragments across pages and templates? Let's see with a GatsbyJS blog example.
