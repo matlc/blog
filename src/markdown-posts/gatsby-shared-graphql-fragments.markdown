@@ -1,7 +1,7 @@
 ---
 path: "/blog/gatsby-shared-graphql-fragments"
 date: "2019-07-21"
-title: "How to export GraphQL fragments for Reuse Across templates in GatsbyJS"
+title: "How to export GraphQL fragments for reuse across templates in GatsbyJS"
 ---
 
 GraphQL fragments can help organize and encourage reuse within our GatsbyJS page queries. However, how do you share fragments across pages and templates? Let's see with a GatsbyJS blog example.
@@ -10,7 +10,7 @@ GraphQL fragments can help organize and encourage reuse within our GatsbyJS page
 
 In this example, our blog uses template files to build pages for posts and authors: `blog-post.js` and `blog-author.js` respectively. The `blog-post.js` and `blog-author.js` are very similar, requesting the same fields from PostsJson and AuthorsJson.
 
-```
+```javascript
 // src/templates/blog-post.js query
 export const query = graphql`
   query ($id: String!) {
@@ -50,7 +50,7 @@ export const query = graphql`
 
 Seeing the similarity, we could abstract the post and author fields into GraphQL fragments that both queries could reference. The fragments would look like this:
 
-```
+```graphql
 fragment postFields on PostsJson {
   slug
   title
@@ -82,7 +82,7 @@ In our example, we have a central place for our fragments, a file called `fragme
 
 In `fragments.js`, we can copy our fragments then turn them into Javascript named exports. As the quoted documentation mentioned, our fragment names are unique.
 
-```
+```javascript
 import { graphql } from 'gatsby'
 
 export const postFields = graphql`
@@ -108,7 +108,7 @@ Gatsby exports those queries to the global scope, so those fragments are now ava
 
 Back in our `blog-post.js` and `blog-author.js` queries, we can replace the fields with our newly shared fragments.
 
-```
+```javascript
 // blog-post.js query
 export const query = graphql`
   query ($id: String!) {
