@@ -1,8 +1,16 @@
-import { navigate } from "gatsby"
+import React from "react"
+import { Link } from "gatsby"
 
-const IndexPage = () => {
-  navigate('/blog/')
-  return null
-}
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+
+const IndexPage = () => (
+  <Layout>
+    <SEO title='Home' />
+    <h1>Welcome</h1>
+    <Link to='/blog/'>Go to blog</Link>
+  </Layout>
+)
 
 export default IndexPage
