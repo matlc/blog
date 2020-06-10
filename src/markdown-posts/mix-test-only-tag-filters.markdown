@@ -10,7 +10,7 @@ The `mix test` documentation shows a few ways to accomplish that using [Filters]
 
 If I need to edit the test and rerun, my test may not contain line 12 anymore, so I would need to change the line number in the `mix test` command. With a more difficult test, changing the line number over and over gets annoying.
 
-A line-number-agnostic way to focus is uses tags and filters.
+A line-number-agnostic way to focus uses tags and filters.
 
 I add a `@tag focus: true` above the test I'm focusing on, like:
 
