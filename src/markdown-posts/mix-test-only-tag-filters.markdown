@@ -6,7 +6,7 @@ title: "Focus using tags in mix test"
 
 When writing or debugging tests in Elixir, I often need to focus on just one test.
 
-The `mix test` documentation shows a few ways to accomplish that using (Filters)[https://hexdocs.pm/mix/Mix.Tasks.Test.html#module-filters]. Probably the most common one, the test's filename and line number, for example `mix test test/some/particular/file_test.exs:12`, can be used to run that specific test.
+The `mix test` documentation shows a few ways to accomplish that using [Filters](https://hexdocs.pm/mix/Mix.Tasks.Test.html#module-filters). Probably the most common one, the test's filename and line number, for example `mix test test/some/particular/file_test.exs:12`, can be used to run that specific test.
 
 If I need to edit the test and rerun, my test may not contain line 12 anymore, so I would need to change the line number in the `mix test` command. With a more difficult test, changing the line number over and over gets annoying.
 
